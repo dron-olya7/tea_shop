@@ -1,5 +1,5 @@
 # Перенесен чайный магазин на Angular
-![Uploading 2.png…]()
+<img width="1897" height="857" alt="2" src="https://github.com/user-attachments/assets/dece225e-a3ef-4c8e-b7b9-08efc4bfe08a" />
 
 Интернет-магазин по продаже чая с каталогом, поиском и интерактивными элементами.
 
