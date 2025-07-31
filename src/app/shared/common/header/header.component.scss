@@ -1,0 +1,13 @@
+.nav-item .nav-link {
+  text-decoration: none;
+  color: black;
+  &.active {
+    font-weight: bold;
+    color: blue;
+  }
+}
+
+
+ .btn-outline-danger {
+  margin-left: 10px;
+}

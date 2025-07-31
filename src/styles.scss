@@ -1,0 +1,89 @@
+@import "~bootstrap/scss/bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100vh;
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn.my-style__btn-card {
+  width: 170px;
+  height: 38px;
+  border-radius: 4px;
+  color: #ffffff;
+  background: #076bff;
+  margin-bottom: 20px;
+
+  &:hover {
+    background: #0a59cf;
+    color: #ffffff;
+  }
+}
+
+.h1 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+.h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.faque {
+  margin-top: 72px;
+  .h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+}
+
+.form {
+  margin-top: 72px;
+}
+
+#order-form {
+  max-width: 636px;
+  margin: 60px auto 48px auto;
+}
+
+.form-label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+
+  color: #000000;
+}
+
+.navbar-brand {
+  max-width: 100px;
+  height: auto;
+}
+.card-img-top {
+  cursor: pointer;
+}
+
+.accordion-button {
+  border: none !important;
+  color: #ffffff !important;
+  background: linear-gradient(360deg, #076bff 0%, #007bff 100%) !important;
+  border-radius: 10px !important;
+  height: 69px !important;
+  margin-bottom: 16px !important;
+  font-size: 20px !important;
+}
+
+.flex-column {
+  padding-top: 120px;
+}

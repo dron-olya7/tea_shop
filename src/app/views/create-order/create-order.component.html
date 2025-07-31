@@ -1,0 +1,76 @@
+<section class="form d-flex justify-content-center align-items-center flex-column min-vh-100 ">
+  <div class="card p-4" style="width: 100%; max-width: 600px;">
+
+<div *ngIf="!responseSuccess; else successMessage">
+  <h2 class="h2 text-center wow fadeOut" id="alluring-top" data-wow-duration="2s" data-wow-iteration="100">Сделать заказ</h2>
+    <form id="order-form" class="row g-3" [formGroup]="orderForm"(ngSubmit)="onSubmit()">
+      <div class="col-md-6">
+        <label for="tea" class="form-label">Название чая</label>
+        <input type="text" class="form-control" id="tea" formControlName="product">
+      </div>
+      <div class="col-md-6">
+        <label for="comment" class="form-label" >Комментарий к заказу</label>
+        <textarea class="form-control" id="comment" formControlName="comment"></textarea>
+      </div>
+      <div class="col-md-6">
+        <label for="firstName" class="form-label" >Имя</label>
+        <input type="text" class="form-control" id="firstName" formControlName="name">
+        <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+          <span class="text-danger" *ngIf="name?.errors?.['required']">Имя обязательно.</span>
+          <span class="text-danger" *ngIf="name?.errors?.['lettersOnly']">Имя должно содержать только буквы.</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="lastName" class="form-label">Фамилия</label>
+        <input type="text" class="form-control" id="lastName" formControlName="last_name">
+        <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+          <span class="text-danger" *ngIf="lastName?.errors?.['required']">Фамилия обязательна.</span>
+          <span class="text-danger" *ngIf="lastName?.errors?.['lettersOnly']">Фамилия должна содержать только буквы.</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="phone" class="form-label">Телефон</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone">
+
+<div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+  <span class="text-danger" *ngIf="phone?.errors?.['required']">Телефон обязателен.</span>
+  <span class="text-danger" *ngIf="phone?.errors?.['phoneInvalid']">Телефон должен содержать 11 цифр.</span>
+</div>
+      </div>
+      <div class="col-md-6">
+        <label for="country" class="form-label">Страна</label>
+        <input type="text" class="form-control" id="country" formControlName="country">
+        <div *ngIf="country?.invalid && (country?.dirty || country?.touched)">
+          <span class="text-danger" *ngIf="country?.errors?.['required']">Страна обязательна.</span>
+          <span class="text-danger" *ngIf="country?.errors?.['lettersOnly']">Поле может содержать только буквы.</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="postalCode" class="form-label">Индекс</label>
+        <input type="text" class="form-control" id="postalCode" formControlName="zip">
+      </div>
+      <div class="col-12">
+        <label for="address" class="form-label">Адрес</label>
+        <input type="text" class="form-control" id="address" formControlName="address">
+        <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+          <small class="text-danger" *ngIf="address?.errors?.['required']">Адрес обязателен.</small>
+          <small class="text-danger" *ngIf="address?.errors?.['addressInvalid']">Адрес может содержать буквы, цифры, пробелы, '-' и '/'.</small>
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary w-100" type="submit" [disabled]="isSubmit || orderForm.invalid ">
+          {{ isSubmit ? 'Отправляется...' : 'Отправить' }}
+        </button>
+        <div *ngIf="errorMessage" class="alert alert-danger text-center">
+          {{ errorMessage }}
+        </div>
+      </div>
+    </form>
+  </div>
+  <ng-template #successMessage>
+    <div class="alert alert-success text-center">
+      Спасибо за заказ!
+    </div>
+  </ng-template>
+  </div>
+</section>

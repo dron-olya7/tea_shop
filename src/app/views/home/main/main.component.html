@@ -1,0 +1,62 @@
+<div class="container d-flex flex-column min-vh-100">
+  <h1 class="text-center">Лучшие чайные коллекции мира!!!</h1>
+
+  <section class="slider-tea">
+    <div class="tea-carrousel">
+      <div>
+        <img
+          src="assets/images/tea1.png"
+          class="d-block w-100"
+          alt="a pot and a cup of tea"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="faque">
+    <h2 class="h2 text-center">Ответы на часто задаваемые вопросы</h2>
+
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-panel
+        title="Собираете ли вы подарочные боксы?"
+        id="ngb-panel-0"
+        class="my"
+      >
+        <ng-template ngbPanelContent>
+          <span
+            >Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на
+            любой вкус, объем и стоимость!</span
+          >
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel title="Сколько у вас разновидностей чая?" id="ngb-panel-1">
+        <ng-template ngbPanelContent>
+          <span
+            >У нас богатый выбор чая. Более 1000 сортов. Зеленый, черный,
+            фруктовый и травяной.</span
+          >
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel title="В какой срок осуществляется доставка?" id="ngb-panel-2">
+        <ng-template ngbPanelContent>
+          <span>Доставку осуществляем в течение 5 рабочих дней.</span>
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel title="У вас обновляется ассортимент?" id="ngb-panel-3">
+        <ng-template ngbPanelContent>
+          <span>Ассортимент обновляется каждые 10 дней.</span>
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel title="Какого объема у вас пачки чая?" id="ngb-panel-4">
+        <ng-template ngbPanelContent>
+          <span>Упаковки чая от 100гр.</span>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+    <popup></popup>
+  </section>
+</div>

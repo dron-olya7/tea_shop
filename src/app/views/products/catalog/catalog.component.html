@@ -1,0 +1,20 @@
+<section class="tea-collection d-flex flex-column min-vh-100">
+  <h1 class="h1" *ngIf="!searchQuery">Наши чайные коллекции</h1>
+  <h1 class="h1" *ngIf="searchQuery && filteredTeas.length > 0">
+    Результаты поиска по запросу "{{ searchQuery }}"
+  </h1>
+  <h1 class="h1" *ngIf="filteredTeas.length === 0 && searchQuery">
+    Товары не найдены по запросу "{{ searchQuery }}"
+  </h1>
+  <div class="tea-collection-items">
+    <tea-card
+      *ngFor="
+        let teaCard of filteredTeas.length > 0 ? filteredTeas : teaCatalog
+      "
+      [teaCard]="teaCard"
+      class="tea-card"
+    >
+    </tea-card>
+  </div>
+  <app-loader [isLoading]="isLoading"></app-loader>
+</section>

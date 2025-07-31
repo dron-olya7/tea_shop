@@ -1,0 +1,20 @@
+<div class="container d-flex flex-column min-vh-100">
+  <div class="tea">
+    <div class="tea-image" *ngIf="teaCard.image; else defaultImageBlock">
+      <img src="{{ teaCard.image }}" alt="Tea" class="img-fluid" />
+    </div>
+
+    <ng-template #defaultImageBlock>
+      <img src="/assets/images/image 1.png" alt="Tea" class="img-fluid" />
+    </ng-template>
+
+    <div class="tea-title mb-2">{{ teaCard.title }}</div>
+    <div class="mb-2 tea-price">{{ teaCard.price }} р.</div>
+    <div class="tea-description mb-4 text-center">
+      {{ teaCard.description }}
+    </div>
+
+    <a class="btn my-style__btn-card" [routerLink]="'/order'">Купить</a>
+  </div>
+</div>
+<app-loader [isLoading]="isLoading"></app-loader>
