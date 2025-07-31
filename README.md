@@ -23,5 +23,5 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/ваш-username/tea-shop.git
+git clone https://github.com/dron-olya7/tea_shop.git
 cd tea-shop
