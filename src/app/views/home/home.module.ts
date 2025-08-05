@@ -5,7 +5,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeRoutingModule } from './home-routing.module';
 import { MainComponent } from './main/main.component';
 
-
 @NgModule({
   declarations: [MainComponent],
   imports: [

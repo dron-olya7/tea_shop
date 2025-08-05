@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class TeaCatalogService {
-  private apiUrl = environment.apiUrl;
+  private apiUrl :string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +18,7 @@ export class TeaCatalogService {
   getTeaDetails(id: number): Observable<TeaCard> {
     return this.http.get<TeaCard>(`${this.apiUrl}/tea?id=${id}`);
   }
-  createOrder(data: OrderData) {
+  createOrder(data: OrderData)  {
     return this.http.post<{ success: boolean, message?: string }>(`${this.apiUrl}/order-tea`, data);
   }
 }

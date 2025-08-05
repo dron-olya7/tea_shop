@@ -13,19 +13,21 @@ import { addressValidator, lettersOnlyValidator, phoneValidator } from 'src/app/
   styleUrls: ['../create-order/create-order.component.scss']
 })
 export class CreateOrderComponent implements OnInit, OnDestroy {
-  orderForm!: FormGroup;
+  orderForm: FormGroup;
   teaCard: TeaCard | null = null;
   private subscriptionOrder: Subscription | null = null;
-  public responseSuccess = false;
+  public responseSuccess :boolean = false;
   public errorMessage: string | null = null;
-  public isSubmit = false;
+  public isSubmit :boolean = false;
 
   constructor(
       private fb: FormBuilder,
       private teaDataService: TeaDataService,
       private teaCatalogService: TeaCatalogService,
       private route: ActivatedRoute
-  ) { }
+  ) {
+    this.orderForm = this.fb.group({}); // Инициализация пустой формы
+  }
 
   ngOnInit(): void {
     this.initForm();
@@ -49,7 +51,7 @@ export class CreateOrderComponent implements OnInit, OnDestroy {
     // Обработка параметра из URL
     this.route.queryParams.subscribe(params => {
       if (params['tea']) {
-        const teaName = decodeURIComponent(params['tea'].replace(/\+/g, ' '));
+        const teaName :string = decodeURIComponent(params['tea'].replace(/\+/g, ' '));
         this.orderForm.controls['product'].setValue(teaName);
       }
     });
