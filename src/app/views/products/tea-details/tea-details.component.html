@@ -14,7 +14,12 @@
       {{ teaCard.description }}
     </div>
 
-    <a class="btn my-style__btn-card" [routerLink]="'/order'">Купить</a>
+<!--    <a class="btn my-style__btn-card" [routerLink]="'/order'">Купить</a>-->
+    <a class="btn my-style__btn-card"
+       [routerLink]="['/order']"
+       [queryParams]="{ tea: teaCard.title }">
+      Купить
+    </a>
   </div>
 </div>
 <app-loader [isLoading]="isLoading"></app-loader>

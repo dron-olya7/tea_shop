@@ -1,20 +1,19 @@
 .tea-collection {
-  max-width: 1400px;
-  margin: 72px auto 25px;
-}
-.tea-collection-items {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-tea-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  padding: 2rem;
+
+  &-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 }
 
+.tea-card-wrapper {
+  cursor: pointer;
+  transition: transform 0.3s ease;
 
-
-
-
+  &:hover {
+    transform: scale(1.02);
+  }
+}

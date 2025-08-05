@@ -6,15 +6,15 @@
   <h1 class="h1" *ngIf="filteredTeas.length === 0 && searchQuery">
     Товары не найдены по запросу "{{ searchQuery }}"
   </h1>
+
   <div class="tea-collection-items">
-    <tea-card
-      *ngFor="
-        let teaCard of filteredTeas.length > 0 ? filteredTeas : teaCatalog
-      "
-      [teaCard]="teaCard"
-      class="tea-card"
-    >
-    </tea-card>
+    <div
+            *ngFor="let teaCard of filteredTeas.length > 0 ? filteredTeas : teaCatalog"
+            (click)="goToOrder(teaCard.title)"
+            class="tea-card-wrapper">
+      <tea-card [teaCard]="teaCard" class="tea-card"></tea-card>
+    </div>
   </div>
+
   <app-loader [isLoading]="isLoading"></app-loader>
 </section>
